@@ -41,7 +41,7 @@ def predict_proba(s):
         category = labels[np.where(arr == arr.max())[0][0]]
         categories.append(category)
 
-        #print(preprocess(s[i]))
+        # print(preprocess(s[i]))
         print(category)
 
     return ' '.join(categories)
@@ -86,7 +86,7 @@ def predict():
 
 if __name__ == '__main__':
 
-    try:
+    # try:
         morph = pymorphy2.MorphAnalyzer()
 
         p_vectorizer = joblib.load(app.root_path + '/models/vectorizer.pkl')
@@ -106,9 +106,9 @@ if __name__ == '__main__':
         p_xgb = joblib.load(app.root_path + '/models/xgb.pkl')
         print('model loaded')
 
-    except Exception as e:
-        print('No model here')
-        print(e.__str__())
+    # except Exception as e:
+    #     print('No model here')
+    #     print(e.__str__())
 
     app.run()
 
