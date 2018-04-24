@@ -110,7 +110,7 @@ if __name__ == '__main__':
     #     print('No model here')
     #     print(e.__str__())
 
-    app.run()
+        app.run()
 
 
 def f_tokenizer(s):
