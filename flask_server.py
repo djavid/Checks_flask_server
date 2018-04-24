@@ -1,9 +1,11 @@
+import os
+import re
+import sys
+
+import numpy as np
+import pymorphy2
 from flask import Flask, request
 from sklearn.externals import joblib
-import numpy as np
-import re
-import pymorphy2
-import os
 
 app = Flask(__name__)
 
@@ -27,6 +29,7 @@ def predict_proba(s):
     print(s)
     print(os.getcwd())
     print('zdarova')
+    sys.stdout.flush()
     s = p_vectorizer.transform(s)
     s_meta_catalog = p_model_catalog.predict_proba(s)
 
