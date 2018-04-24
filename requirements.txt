@@ -11,5 +11,5 @@ pymorphy2-dicts==2.4.393442.3710985
 Werkzeug==0.14.1
 gunicorn==19.7.1
 scikit-learn==0.18.1
-numpy==1.14.2
+numpy==1.11
 scipy==1.0.1
