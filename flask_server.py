@@ -26,6 +26,26 @@ labels = ['Алкоголь', 'Бакалея', 'Гастрономия', 'Де�
 
 
 def predict_proba(s):
+    path = os.getcwd() + '/static/'
+    print(path)
+    p_vectorizer = joblib.load(path + 'vectorizer.pkl')
+    print('model loaded')
+    p_labeler = joblib.load(path + 'labeler.pkl')
+    print('model loaded')
+    p_model_catalog = joblib.load(path + 'model_catalog.pkl')
+    print('model loaded')
+    p_log_model_1 = joblib.load(path + 'log_model_1.pkl')
+    print('model loaded')
+    p_log_model_2 = joblib.load(path + 'log_model_2.pkl')
+    print('model loaded')
+    p_log_model_3 = joblib.load(path + 'log_model_3.pkl')
+    print('model loaded')
+    p_log_model_4 = joblib.load(path + 'log_model_4.pkl')
+    print('model loaded')
+    p_xgb = joblib.load(path + 'xgb.pkl')
+    print('model loaded')
+
+
     print(s)
     print(os.getcwd())
     print('zdarova')
