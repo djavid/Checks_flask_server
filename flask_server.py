@@ -24,7 +24,7 @@ labels = ['Алкоголь', 'Бакалея', 'Гастрономия', 'Де�
 
 
 def predict_proba(s):
-    s = p_vectorizer.transform(s)
+    #s = p_vectorizer.transform(s)
     s_meta_catalog = p_model_catalog.predict_proba(s)
 
     s_meta = []
