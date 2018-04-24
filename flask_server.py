@@ -3,6 +3,7 @@ from sklearn.externals import joblib
 import numpy as np
 import re
 import pymorphy2
+import os
 
 app = Flask(__name__)
 
@@ -86,32 +87,33 @@ def predict():
 
 if __name__ == '__main__':
 
-    # try:
+    try:
         morph = pymorphy2.MorphAnalyzer()
 
-        print(app.root_path)
-        p_vectorizer = joblib.load('/models/vectorizer.pkl')
+        path = os.getcwd()
+        print(path)
+        p_vectorizer = joblib.load(path + '/models/vectorizer.pkl')
         print('model loaded')
-        p_labeler = joblib.load('/models/labeler.pkl')
+        p_labeler = joblib.load(path + '/models/labeler.pkl')
         print('model loaded')
-        p_model_catalog = joblib.load('/models/model_catalog.pkl')
+        p_model_catalog = joblib.load(path + '/models/model_catalog.pkl')
         print('model loaded')
-        p_log_model_1 = joblib.load('/models/log_model_1.pkl')
+        p_log_model_1 = joblib.load(path + '/models/log_model_1.pkl')
         print('model loaded')
-        p_log_model_2 = joblib.load('/models/log_model_2.pkl')
+        p_log_model_2 = joblib.load(path + '/models/log_model_2.pkl')
         print('model loaded')
-        p_log_model_3 = joblib.load('/models/log_model_3.pkl')
+        p_log_model_3 = joblib.load(path + '/models/log_model_3.pkl')
         print('model loaded')
-        p_log_model_4 = joblib.load('/models/log_model_4.pkl')
+        p_log_model_4 = joblib.load(path + '/models/log_model_4.pkl')
         print('model loaded')
-        p_xgb = joblib.load('/models/xgb.pkl')
+        p_xgb = joblib.load(path + '/models/xgb.pkl')
         print('model loaded')
 
-    # except Exception as e:
-    #     print('No model here')
-    #     print(e.__str__())
+    except Exception as e:
+        print('No model here')
+        print(e.__str__())
 
-        app.run()
+    app.run()
 
 
 def f_tokenizer(s):
